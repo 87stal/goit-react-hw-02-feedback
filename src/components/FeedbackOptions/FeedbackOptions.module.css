@@ -1,0 +1,11 @@
+.button {
+  margin-right: 20px;
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: aqua;
+}
+
+.button:hover {
+  background-color: deepskyblue;
+}
