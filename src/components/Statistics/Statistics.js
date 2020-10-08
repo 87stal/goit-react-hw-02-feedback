@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Statistic.module.css'
+import styles from './Statistic.module.css';
 
 const Statistics = ({
   state,
@@ -14,12 +14,16 @@ const Statistics = ({
     <p className={styles.fieldStatistic}>Total: {countTotalFeedback}</p>
     <p className={styles.fieldStatistic}>
       Positive feedback:
-       {countPositiveFeedbackPercentage}%
+      {countPositiveFeedbackPercentage}%
     </p>
   </>
 );
 Statistics.propTypes = {
-  state: PropTypes.object.isRequired,
+  state: PropTypes.exact({
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+  }).isRequired,
   countPositiveFeedbackPercentage: PropTypes.number.isRequired,
   countTotalFeedback: PropTypes.number.isRequired,
 };
